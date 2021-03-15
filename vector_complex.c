@@ -84,7 +84,6 @@ struct VectorN* printVectorCompl(struct VectorN* v)
     complexCoordOutput(v->coordinates+(v->dimension-1)*v->elementSize);
     printf("]\n");
 };
-
 struct VectorN* inputComplexVector()
 {
     printf("Enter dimension of vector:");
@@ -95,9 +94,9 @@ struct VectorN* inputComplexVector()
     float im = 0;
     for(int i = 0; i < dim; i++){
         printf("Enter %d coordinate:\n", i+1);
-        printf("Real: ");
+        printf("Real:");
         scanf("%f", get_real(h+i));
-        printf("Imaginary: \n");
+        printf("Imaginary:");
         scanf("%f", get_imagine(h+i));
     };
     return createFromValuesCompl(dim, h);

@@ -1,7 +1,3 @@
-//
-// Created by Denis on 09.03.2021.
-//
-
 #ifndef LESSONS_VECTOR_FLOAT_H
 #define LESSONS_VECTOR_FLOAT_H
 

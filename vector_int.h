@@ -1,10 +1,5 @@
-//
-// Created by Denis on 14.03.2021.
-//
-
 #ifndef LESSONS_VECTOR_INT_H
 #define LESSONS_VECTOR_INT_H
-
 #endif //LESSONS_VECTOR_INT_H
 
 #include "vector.h"

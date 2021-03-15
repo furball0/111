@@ -1,7 +1,3 @@
-//
-// Created by Denis on 14.03.2021.
-//
-
 #include "vector_int.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,6 +18,7 @@ void* mult_int(void* x, void* y)
     *c = *a * *b;
     return (void*)c;
 };
+
 void* zero_int = NULL;
 void* one_int = NULL;
 void* init_zero_one(){
@@ -47,6 +44,7 @@ struct VectorN* createFromValuesInt(size_t size, void* values){
     init_zero_one();
     return createFromValues(size, sizeof(int), values, zero_int, sum_int, one_int, mult_int);
 };
+
 struct VectorN* printVectorInt(struct VectorN* v)
 {
     printf("[");
@@ -56,7 +54,6 @@ struct VectorN* printVectorInt(struct VectorN* v)
     printf("%d", *(int*)(v->coordinates + (v->dimension-1)*v->elementSize));
     printf("]\n");
 };
-
 struct VectorN* inputIntVector()
 {
     printf("Enter dimension of vector:");

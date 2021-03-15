@@ -1,15 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "vector_float.h"
 
 #include "interface.h" //here includes vector_int.h, vector_complex.h -> vector.h
 
 int main()
 {
-    //struct VectorN_float *v1 = putVectorN();
-    //struct VectorN_float *v2 = putVectorN();
-    //struct VectorN_float *v3 = summN(v1, v2);
-    //printVectorN(v3);
+
     //struct VectorN* v1 = create1Float(4);
     //printf("%f", *(float*)v1->coordinates);
 

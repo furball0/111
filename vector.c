@@ -1,44 +1,9 @@
-//
-// Created by Denis on 08.03.2021.
-//
 #include "vector.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 
-struct VectorN_float* summN(struct VectorN_float *v1, struct VectorN_float *v2) {
-    if (v1->dimension != v2->dimension) {
-        printf("ERROR HAPPENED\n");
-    }
-    struct VectorN_float *v3 = malloc(sizeof(struct VectorN_float));
-    v3->dimension = v1->dimension;
-    v3->coordinates = (float*)malloc(sizeof(float)*v3->dimension);
-    for (int i = 0; i< v3->dimension; i++) {
-        *(v3->coordinates + i) = *(v1->coordinates+i) + *(v2->coordinates+i);
-    }
-    return v3;
-}
-struct VectorN_float* putVectorN(void) {
-    struct VectorN_float *v = malloc(sizeof(struct VectorN_float));
-    printf("Set vector dimension:\n");
-    scanf("%d", &v->dimension);
-    v->coordinates = (float*) malloc(sizeof(float) * v->dimension);
-    for (int i = 0; i < v->dimension; i++) {
-        printf("Write %d coordinate:\n", i+1);
-        scanf("%f", v->coordinates+i);
-    }
-    return v;
-}
-struct VectorN_float* printVectorN(struct VectorN_float *v) {
-    printf("Vector dismension %d\n", v->dimension);
-    printf("Sum%d: ", v->dimension);
-    for (int i=0; i< v->dimension; i++) {
-        printf("%d coord = %.2f; ",i+1, *(v->coordinates+i));
-    }
-}
-
-///////////////////////
 
 void* getN(size_t coord, struct VectorN* v){
     return (void*)((int8_t*) v->coordinates + coord * (v->elementSize));
@@ -107,18 +72,15 @@ struct VectorN* sumN(struct VectorN* v1, struct VectorN* v2){
                 }
                 return v3;
             } else{
-                //system("cls"), Error("Dimension error (D(v1) != D(v2))");
-                printf("Dimension error (D(v1) != D(v2))");
+                Error("Dimension error (D(v1) != D(v2))");
                 return 0;
             }
         } else {
-            //system("cls"), Error("Type error (Type(v1) != Type(v2))");
-            printf("Type error (Type(v1) != Type(v2))");
+            Error("Type error (Type(v1) != Type(v2))");
             return 0;
         }
     } else{
-        //system("cls"), Error("Vector1 and Vector2 = 0");
-        printf("Vector1 and Vector2 = 0");
+        Error("Vector1 and Vector2 = 0");
         return 0;
     }
 };
@@ -136,18 +98,15 @@ struct VectorN* scalarMultN(struct VectorN* v1, struct VectorN* v2)
                 }
                 return v3;
             } else{
-                //system("cls"), Error("Dimension error (D(v1) != D(v2))");
-                printf("Dimension error (D(v1) != D(v2))");
+                Error("Dimension error (D(v1) != D(v2))");
                 return 0;
             }
         } else {
-            //system("cls"), Error("Type error (Type(v1) != Type(v2))");
-            printf("Type error (Type(v1) != Type(v2))");
+            Error("Type error (Type(v1) != Type(v2))");
             return 0;
         }
     } else{
-        //system("cls"), Error("Vector1 and Vector2 = 0");
-        printf("Vector1 and Vector2 = 0");
+        Error("Vector1 and Vector2 = 0");
         return 0;
     }
 };
@@ -171,14 +130,14 @@ void* Error(char* msg)
 void* DeletePointer(void* p)
 {
     if (!p)
-        system("cls"), Error("Attempt to free null pointer"); //system ("cls") clear console
+        Error("Attempt to free null pointer"); //system ("cls") clear console
     free(p);
     p = NULL;
 }
 void* DeleteVectorN(struct VectorN* v)
 {
     if (!v)
-        system("cls"), Error("Attempt to free null pointer");
+        Error("Attempt to free null pointer");
     DeletePointer(v->coordinates);
     DeletePointer(v);
     v = NULL;
