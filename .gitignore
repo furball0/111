@@ -1,0 +1,14 @@
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore Logs
+/cmake-build-debug
+/.idea
+# Ignore the build directory
+/dist
+
+# The file containing environment variables 
+.env
+
+# Ignore IDE specific files
+*.sw*
