@@ -1,4 +1,3 @@
-
 #ifndef LESSONS_VECTOR_H
 #define LESSONS_VECTOR_H
 #pragma once
@@ -33,5 +32,3 @@ struct VectorN* num_mult_vector(void* scalar, struct VectorN* v); //Multiplicati
 
 
 void* Error(char* msg);
-void* DeletePointer(void* p);
-void* DeleteVectorN(struct VectorN* v);

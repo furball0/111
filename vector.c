@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-
 void* getN(size_t coord, struct VectorN* v){
     return (void*)((int8_t*) v->coordinates + coord * (v->elementSize));
 };
@@ -126,19 +125,4 @@ void* Error(char* msg)
     printf("\n");
     system("pause");
     exit(0);
-}
-void* DeletePointer(void* p)
-{
-    if (!p)
-        Error("Attempt to free null pointer"); //system ("cls") clear console
-    free(p);
-    p = NULL;
-}
-void* DeleteVectorN(struct VectorN* v)
-{
-    if (!v)
-        Error("Attempt to free null pointer");
-    DeletePointer(v->coordinates);
-    DeletePointer(v);
-    v = NULL;
 }

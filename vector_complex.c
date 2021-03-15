@@ -1,6 +1,3 @@
-//
-// Created by Denis on 14.03.2021.
-//
 #include "vector_complex.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -48,7 +45,7 @@ void* init_zero_one_compl(){
         zero_compl->real = 0;
         one_compl = malloc(sizeof(complex));
         one_compl->imaginary = 1;
-        zero_compl->real = 1;
+        one_compl->real = 1;
     }
 };
 void* complexCoordOutput(complex* z)

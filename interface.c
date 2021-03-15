@@ -1,6 +1,3 @@
-//
-// Created by Denis on 15.03.2021.
-//
 #include <stdio.h>
 #include <stdlib.h>
 #include "interface.h"
@@ -39,7 +36,6 @@ void* ui()
             printf("Vector 2:\n");
             struct VectorN *v2 = inputIntVector();
             struct VectorN *v3 = sumN(v1, v2);
-            printf("1");
             printf("Vector 1 = ");
             printVectorInt(v1);
             printf("Vector 2 = ");
@@ -160,7 +156,7 @@ void* ui()
     } else{
         printf("\n");
         sep();
-        printf("\nThe type is incorrect. Please, enter the correct type.\n");
+        printf("The type is incorrect. Please, enter the correct type.\n");
         sep();
         ui();
     };

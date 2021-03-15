@@ -1,7 +1,3 @@
-//
-// Created by Denis on 14.03.2021.
-//
-
 #ifndef LESSONS_VECTOR_COMPLEX_H
 #define LESSONS_VECTOR_COMPLEX_H
 #define get_Re(Z)  (&((Z)->real))
