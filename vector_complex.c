@@ -39,7 +39,7 @@ void* mult_compl(void* x, void* y)
 complex* zero_compl = NULL;
 complex* one_compl = NULL;
 void* init_zero_one_compl(){
-    if (zero_compl == NULL){ //not zero_float
+    if (zero_compl == NULL){
         zero_compl = malloc(sizeof(complex));
         zero_compl->imaginary = 0;
         zero_compl->real = 0;

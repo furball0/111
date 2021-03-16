@@ -1,7 +1,6 @@
 #ifndef LESSONS_VECTOR_COMPLEX_H
 #define LESSONS_VECTOR_COMPLEX_H
-#define get_Re(Z)  (&((Z)->real))
-#define get_Im(Z)  (&((Z)->im)
+
 #endif //LESSONS_VECTOR_COMPLEX_H
 
 #include "vector.h"

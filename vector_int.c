@@ -22,7 +22,7 @@ void* mult_int(void* x, void* y)
 void* zero_int = NULL;
 void* one_int = NULL;
 void* init_zero_one(){
-    if (zero_int == NULL){ //not zero_float
+    if (zero_int == NULL){
         zero_int = malloc(sizeof(int));
         *(int*)zero_int = 0;
         one_int = malloc(sizeof(int));

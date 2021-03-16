@@ -1,4 +1,4 @@
-#include "test.h"
+#include "tests.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -46,7 +46,7 @@ void* test_int()
     printVectorInt(v4);
 
     //Dimension error---------------------------
-    //test_dim_error_int();
+    test_dim_error_int();
     //------------------------------------------
 
     //Mult

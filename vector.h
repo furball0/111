@@ -22,8 +22,8 @@ struct VectorN* create1(size_t size, size_t elementSize, void* zero, void* (*sum
 struct VectorN* createFromValues(size_t size, size_t elementSize, void* values, void* zero, void* (*sum), void* one, void* (*mult));
 
 // II. Декомпозиция
-void* getN(size_t coord, struct VectorN* v); //Получение
-void* setN(size_t coord, void* value, struct VectorN* v); // struct VectorN*
+void* getN(size_t coord, struct VectorN* v); //Get element
+void* setN(size_t coord, void* value, struct VectorN* v); // Set element in position
 
 // III. Операции
 struct VectorN* sumN(struct VectorN* v1, struct VectorN* v2); //Sum of vectors

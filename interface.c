@@ -5,7 +5,6 @@
 int max_command_len = 100;
 
 
-
 void* ui()
 {
     char* command = (char*)malloc(max_command_len * sizeof(char));

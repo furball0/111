@@ -6,7 +6,7 @@
 
 void* getN(size_t coord, struct VectorN* v){
     return (void*)((int8_t*) v->coordinates + coord * (v->elementSize));
-};
+}
 void* setN(size_t coord, void* value, struct VectorN* v){
     void* position = (int8_t*)v->coordinates + coord * v->elementSize;
     memcpy(position, value, v->elementSize);
@@ -23,7 +23,7 @@ struct VectorN* create0(size_t size, size_t elementSize, void* zero, void* (*sum
     v->mult = mult;
     for (size_t i = 0; i < v->dimension; i++){
         int8_t* position = (int8_t*)v->coordinates + i * v->elementSize;
-        memcpy((void*)position, v->zero, v->elementSize); //Куда, откуда, сколько
+        memcpy((void*)position, v->zero, v->elementSize);
     }
     return v;
 };
@@ -38,7 +38,7 @@ struct VectorN* create1(size_t size, size_t elementSize, void* zero, void* (*sum
     v->mult = mult;
     for (size_t i = 0; i < v->dimension; i++){
         int8_t* position = (int8_t*)v->coordinates + i * v->elementSize;
-        memcpy((void*)position, v->one, v->elementSize); //Куда, откуда, сколько
+        memcpy((void*)position, v->one, v->elementSize);
     }
     return v;
 };
@@ -53,7 +53,7 @@ struct VectorN* createFromValues(size_t size, size_t elementSize, void* values, 
     v->mult = mult;
     for(int i = 0; i<v->dimension; i++){
         int8_t* position = (int8_t*)v->coordinates + i * v->elementSize;
-        memcpy((void*)position, values+i*v->elementSize, v->elementSize); //Куда, откуда, сколько
+        memcpy((void*)position, values+i*v->elementSize, v->elementSize);
     };
     return v;
 };
@@ -66,7 +66,7 @@ struct VectorN* sumN(struct VectorN* v1, struct VectorN* v2){
                 for (int i = 0; i < v1->dimension; i++){
                     void* el1 = getN(i, v1);
                     void* el2 = getN(i, v2);
-                    void* el3 = v3->sum(el1, el2); //v1->sumN(el1, el2);
+                    void* el3 = v3->sum(el1, el2);
                     setN(i, el3, v3);
                 }
                 return v3;
@@ -92,7 +92,7 @@ struct VectorN* scalarMultN(struct VectorN* v1, struct VectorN* v2)
                 for (int i = 0; i < v1->dimension; i++){
                     void* el1 = getN(i, v1);
                     void* el2 = getN(i, v2);
-                    void* el3 = v3->mult(el1, el2); //v1->sumN(el1, el2);
+                    void* el3 = v3->mult(el1, el2);
                     setN(i, el3, v3);
                 }
                 return v3;
@@ -116,7 +116,7 @@ struct VectorN* num_mult_vector(void* scalar, struct VectorN* v)
         void* el = getN(i, v);
         void* el_after_mult = v->mult(el, scalar);
         setN(i, el_after_mult, v);
-    };
+    }
 };
 
 void* Error(char* msg)

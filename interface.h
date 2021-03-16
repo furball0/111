@@ -3,7 +3,7 @@
 #define LESSONS_INTERFACE_H
 
 #endif //LESSONS_INTERFACE_H
-#include "test.h"
+#include "tests.h"
 
 
 void* ui();
